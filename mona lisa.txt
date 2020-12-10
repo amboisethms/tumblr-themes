@@ -1354,11 +1354,6 @@ footer {display:none!important;}
 .top, .burger, .hcontrols, iframe.tmblr-iframe {
     position:absolute;
 }
-
-.burger.clicked span:before, .burger.clicked span:after {
-    position:fixed;
-    top:20px;
-}
 {/block:IfNotStickyTop}
 
 /* dark version */
@@ -1414,7 +1409,7 @@ nav, nav ul.main li a {
     background:#eee;
 }
 
-.hcontrols svg, .scrollup svg, .icons svg, .pinned svg {
+.hcontrols svg, .scrollup svg, .icons svg, .pinned svg, .close svg {
     color:#eee;
 }
 
