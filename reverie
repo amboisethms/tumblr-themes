@@ -1,0 +1,352 @@
+<!-- 
+
+
+reverie : page by amboise
+    be cool and don't steal nor copy
+
+i really don't know if i made this clear enough or not, that's why i left a few examples so you can see how links go changing accordingly. still, don't hesitate to ask something at https://amboise.tumblr.com/contact if it gets confusing.
+
+if there's any section you don't want simply delete it's corresponding div.
+
+feel free to change fonts and icons
+
+
+-->
+<!DOCTYPE html>
+<head>
+
+<title>reverie : page by amboise</title> <!-- window title -->
+
+<link rel="shortcut icon" href="{favicon}">
+<link rel="alternate" type="application/rss+xml" href="{RSS}">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- font - ------------------------------------------------------------------->
+
+<link href="https://fonts.googleapis.com/css?family=Karla:400,400i,700,700i" rel="stylesheet">
+
+<!-- icons by saturnthms ------------------------------------------------------>
+
+<link href="//dl.dropbox.com/s/50g6fbds3rh4m0j/saturnicons.css" rel="stylesheet">
+
+<!-- css customization -------------------------------------------------------->
+
+<style type="text/css">
+
+/* media queries */
+
+@media only screen and (max-width:768px) {
+    header {width:75%!important;}
+}
+
+/* tumblr controls by@cyantists */
+
+iframe.tmblr-iframe {
+    z-index:99999999999999!important;
+    top:12.5px!important;
+    right:8px!important;
+    opacity:0;
+    padding-right:38px;
+    /* delete invert(1) from here */
+        filter:invert(1) contrast(150%);
+        -webkit-filter:invert(1) contrast(150%);
+        -o-filter:invert(1) contrast(150%);
+        -moz-filter:invert(1) contrast(150%);
+        -ms-filter:invert(1) contrast(150%);
+    /* to here if your blog has a dark background */
+    transform:scale(0.65);
+    transform-origin:100% 0;
+    -webkit-transform:scale(0.65);
+    -webkit-transform-origin:100% 0;
+    -o-transform:scale(0.65);
+    -o-transform-origin:100% 0;
+    -moz-transform:scale(0.65);
+    -moz-transform-origin:100% 0;
+    -ms-transform:scale(0.65);
+    -ms-transform-origin:100% 0;
+}
+
+iframe.tmblr-iframe:hover {
+    opacity:0.6!important;
+}
+
+.hcontrols {
+    position:fixed;
+    top:15px;
+    right:8px;
+    z-index:999999999;
+}
+
+.hcontrols svg {
+    width:14px;
+    height:14px;
+    padding:9px;
+}
+
+.hcontrols svg path {
+    fill:#888888;
+} 
+
+/* credit */
+
+.credit {
+    position:fixed;
+    bottom:18.5px;
+    right:16.5px;
+}
+
+.credit svg {
+    color:#939292;
+}
+
+/* text selection color */
+
+::selection {background:#f0f0f0;color:#000000;}
+::-moz-selection {background:#f0f0f0;color:#000000;}
+::-webkit-selection {background:#f0f0f0;color:#000000;}
+
+/* scrollbar */
+
+::-webkit-scrollbar{
+    height:11px;
+    width:11px;
+    background:inherit;
+}
+
+::-webkit-scrollbar-thumb {background-color:#d5d5d5;}
+
+::-webkit-scrollbar-track {background-color:#eee;}
+
+::-webkit-scrollbar-thumb, ::-webkit-scrollbar-track {
+    border:5px solid #fff;} /* scrollbar background color */
+
+/* main structure */
+
+body {
+    color:#000000; /* font color */
+    background-color:rgb(255,255,255); /* background color */
+    font-size:14px; /* font size */
+    font-family: 'Karla', sans-serif;
+    word-wrap:break-word;
+    line-height:1.6em;
+    margin:0;
+    /* if you want to add a background image instead */
+    background-image:url(""); /* image link goes between the quotation marks */
+    background-repeat:repeat; /* or no-repeat */
+    background-attachment:fixed; /* or scroll (defautl) */
+}
+
+a {
+    color:#000000; /* link color */
+    text-decoration:none;
+}
+
+header img {
+    display:block;
+    width:30px; /* icon width */
+    height:30px; /* icon height */
+    overflow:hidden;
+    border-radius:.4em; /* icon radius - circular 50% - rectangular 0 */
+    margin:0 auto 15px;
+}
+
+header {
+    max-width:100%;
+    margin:75px auto;
+    width:300px;
+    text-align:center;
+}
+
+section {
+    max-width:100%;
+    margin:0 auto;
+    width:250px;
+}
+
+.title {
+    font-size:16px; /* title font size */
+}
+
+.welcome {
+    margin-top:2px;
+}
+
+.welcome, .bye {
+    font-size:13px; /* description and footer font size */
+}
+
+/* links */
+
+.subs {
+    width:224px;
+    background-color:rgb(255,255,255); /* background color */
+    border:1px solid #eee;
+    margin-bottom:5px;
+    padding:12px;
+}
+
+/* links border color */
+    /* make sure you match this colors with the one you use for their respective icons | if you want to change these colors you can go to https://yukoki.tumblr.com/tagged/ms-paint and choose the palette of your liking or to https://coolors.co/ */
+
+.one {border-left:5px solid #e7f3cd;} /* link one */
+.two {border-left:5px solid #ddf1cd;} /* link two */
+.three {border-left:5px solid #c5edcd;} /* link three */
+.four {border-left:5px solid #b9edcd;} /* link four */
+.five {border-left:5px solid #b9eddd;} /* link five */
+.six {border-left:5px solid #c9e5f3;} /* link six */
+.seven {border-left:5px solid #cae1e7;} /* link seven */
+.eight {border-left:5px solid #dfe4e7;} /* link eight */
+
+/* icons */
+
+.sf {
+    font-size:10px;/* icon size */
+    margin-right:10px;
+}
+
+/* icons + colors */
+
+.sf-home {color:#e7f3cd;} 
+.sf-user {color:#ddf1cd;} 
+.sf-chat {color:#c5edcd;} 
+.sf-palette {color:#b9edcd;} 
+.sf-location {color:#b9eddd;} 
+.sf-star {color:#c9e5f3;} 
+.sf-calendar {color:#cae1e7;} 
+.sf-write {color:#dfe4e7;margin-right:9px;} 
+
+/* search bar by @lmthemes */
+
+.sfm input {
+    color:#000; /* font color */
+    background-color:#fff; /* background color */
+    font-size:14px;
+    font-family:'Karla', helvetica, arial;
+    text-transform:lowercase;
+    border:0;
+    margin:0; 
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline:none;
+}
+
+footer {
+    max-width:100%;
+    margin:100px auto 150px;
+    width:300px;
+    text-align:center;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    
+    <!-- icon -->
+    <img src="https://78.media.tumblr.com/77339ee21ed9e3f32d7b11fc4103b6f0/tumblr_p5xjrqReaa1w3k7yao7_r1_100.png"/>
+
+    <!-- title -->
+    <div class="title">
+        reverie
+    </div>
+    
+    <!-- description -->
+    <div class="welcome">
+        be gentle my little thunderstorm
+    </div>
+    
+</header>
+
+<section>
+
+    <!-- links -->
+    
+    <!-- if you want to link externally add http:// or https:// if the link is from within your blog add /yourlink 
+
+        if you want to change icons go to saturnthms.com/font there are instrcutions there to help you use them easily -->
+    
+    
+    <!-- link one -->
+    <div class="subs one">
+    <i class="sf sf-home" aria-hidden="true"></i> <!-- icon goes here -->
+    <a href="/yourlink"> <!-- link goes here -->
+    home <!-- link name goes here -->
+    </a>
+    </div>
+    
+    <!-- link two -->
+    <div class="subs two">
+    <i class="sf sf-user" aria-hidden="true"></i>
+    <a href="/yourlink">profile</a>
+    </div>
+    
+    <!-- link three -->
+    <div class="subs three">
+    <i class="sf sf-chat" aria-hidden="true"></i>
+    <a href="/ask">message</a>
+    </div>
+    
+    <!-- link four -->
+    <div class="subs four">
+    <i class="sf sf-palette" aria-hidden="true"></i>
+    <a href="/yourlink">palettes</a>
+    </div>
+    
+    <!-- link five -->
+    <div class="subs five">
+    <i class="sf sf-location" aria-hidden="true"></i>
+    <a href="/yourlink">location</a>
+    </div>
+    
+    <!-- link six -->
+    <div class="subs six">
+    <i class="sf sf-star" aria-hidden="true"></i>
+    <a href="/yourlink">favorites</a>
+    </div>
+    
+    <!-- link seven -->
+    <div class="subs seven">
+    <i class="sf sf-calendar" aria-hidden="true"></i>
+    <a href="/archive">history</a>
+    </div>
+    
+    <!-- link eight -->
+    <div class="subs eight">
+    
+    <script language="javascript">
+    function send()
+    {document.theform.submit()}
+    </script>
+
+    <form action="/search" method="get" class="sfm" name="theform">
+        <i class="sf sf-write" aria-hidden="true"></i>
+        <input type="text" name="q" placeholder="search" id="sf"/>
+    </form>
+    
+    </div>
+    
+<footer>
+    
+    <!-- footer text - if you won't use this section just delete the following div and not the footer itself -->
+
+    <div class="bye">
+        the world is just not ready.
+    </div>
+    
+</footer>
+
+<!-- don't change anything from this point on -->
+
+<a class="credit" href="https://amboise.tumblr.com/"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-power"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path><line x1="12" y1="2" x2="12" y2="12"></line></svg></a>
+
+<div class="hcontrols"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 216 216" enable-background="new 0 0 216 216" xml:space="preserve"><path d="M106.6,134c14.3,0,26-11.7,26-26s-11.7-26-26-26s-26,11.7-26,26S92.2,134,106.6,134z M106.6,94c7.7,0,14,6.3,14,14s-6.3,14-14,14s-14-6.3-14-14S98.9,94,106.6,94z M40.4,124.6l7.2,3.3c3,1.4,4.4,4.8,3.3,7.9l-2.8,7.4c-2.1,5.7-1.4,11.8,2.1,16.7c3.4,5,9,7.9,15,7.9c2.2,0,4.4-0.4,6.5-1.2l7.4-2.8c0.7-0.3,1.4-0.4,2.2-0.4c2.4,0,4.7,1.4,5.7,3.7l3.3,7.2c3,6.6,9.4,10.7,16.6,10.7s13.6-4.1,16.6-10.7l3.3-7.2c1-2.2,3.2-3.7,5.7-3.7c0.7,0,1.5,0.1,2.2,0.4l7.4,2.8c2.1,0.8,4.3,1.2,6.5,1.2c0,0,0,0,0,0c5.9,0,11.5-3,15-7.9c3.4-5,4.2-11.1,2.1-16.7l-2.8-7.4c-1.1-3.1,0.3-6.5,3.3-7.9l7.2-3.3c6.6-3,10.7-9.4,10.7-16.6s-4.1-13.6-10.7-16.6l-7.2-3.3c-3-1.4-4.4-4.8-3.3-7.9l2.8-7.4c2.1-5.7,1.4-11.8-2.1-16.7c-3.4-5-9-7.9-15-7.9c-2.2,0-4.4,0.4-6.5,1.2l-7.4,2.8c-0.7,0.3-1.4,0.4-2.2,0.4c-2.4,0-4.7-1.4-5.7-3.7l-3.3-7.2c-3-6.6-9.4-10.7-16.6-10.7S93,35.2,90,41.8l-3.3,7.2c-1,2.2-3.2,3.7-5.7,3.7c-0.7,0-1.5-0.1-2.2-0.4l-7.4-2.8c-2.1-0.8-4.3-1.2-6.5-1.2c-5.9,0-11.5,3-15,7.9c-3.4,5-4.2,11.1-2.1,16.7l2.8,7.4c1.1,3.1-0.3,6.5-3.3,7.9l-7.2,3.3c-6.6,3-10.7,9.4-10.7,16.6S33.8,121.6,40.4,124.6z M45.3,102.3l7.2-3.3c8.7-4,12.9-14.1,9.5-23l-2.8-7.4c-1-2.7,0-4.7,0.7-5.7c1.6-2.4,4.6-3.4,7.4-2.3l7.4,2.8c2.1,0.8,4.2,1.2,6.4,1.2c0,0,0,0,0,0c7.1,0,13.6-4.2,16.6-10.7l3.3-7.2c1.5-3.4,4.7-3.7,5.7-3.7s4.1,0.3,5.7,3.7l3.3,7.2c3,6.5,9.5,10.7,16.6,10.7c2.2,0,4.3-0.4,6.4-1.2l7.4-2.8c2.8-1,5.7,0,7.4,2.3c0.7,1,1.7,3,0.7,5.7l-2.8,7.4c-3.3,8.9,0.8,19,9.5,23l7.2,3.3c3.4,1.5,3.7,4.7,3.7,5.7s-0.3,4.1-3.7,5.7l-7.2,3.3c-8.7,4-12.9,14.1-9.5,23l2.8,7.4c1,2.7,0,4.7-0.7,5.7c-1.6,2.4-4.6,3.4-7.4,2.3l-7.4-2.8c-2.1-0.8-4.2-1.2-6.4-1.2c-7.1,0-13.6,4.2-16.6,10.7l-3.3,7.2c-1.5,3.4-4.7,3.7-5.7,3.7s-4.1-0.3-5.7-3.7l-3.3-7.2c-3-6.5-9.5-10.7-16.6-10.7c-2.2,0-4.3,0.4-6.4,1.2l-7.4,2.8c-2.8,1-5.7,0-7.4-2.3c-0.7-1-1.7-3-0.7-5.7l2.8-7.4c3.3-8.9-0.8-19-9.5-23l-7.2-3.3c-3.4-1.5-3.7-4.7-3.7-5.7S41.9,103.9,45.3,102.3z"/></svg></div>
+
+</body>
+</html>
