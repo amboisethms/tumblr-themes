@@ -363,14 +363,30 @@ h1, h2, h3, h4 {
 
 /* menu */
 
-.burger:hover {cursor:pointer;}
-.burger {
+.burger:hover, .close:hover {
+    cursor:pointer;
+}
+
+.burger, .close {
     width:25px;
     height:25px;
     position:fixed;
     top:12px;
     left:12px;
-    z-index:99999;
+    z-index:999;
+}
+
+.close {
+    -webkit-transform: translateY(-30px);
+    -moz-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    -o-transform: translateY(-30px);
+    transform: translateY(-30px);
+    opacity: 0;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
 }
 
 .burger span {
@@ -409,39 +425,17 @@ h1, h2, h3, h4 {
     height:1px;
     background-color:{color:menu button};
     outline:1px solid transparent;
-    -webkit-transition-property: background-color, -webkit-transform;
-    -moz-transition-property: background-color, -moz-transform;
-    -o-transition-property: background-color, -o-transform;
-    transition-property: background-color, transform;
-    -webkit-transition-duration:0.3s;
-    -moz-transition-duration:0.3s;
-    -o-transition-duration:0.3s;
-    transition-duration:0.3s;
 }
 
 .burger span::before {top:-5px;}
 .burger span::after {top:5px;}
-.burger.clicked span {background-color:transparent;}
-.burger.clicked {background-color:transparent;}
 
-.burger.clicked span::before {
-    -webkit-transform: translateY(5px) rotate(45deg);
-    -moz-transform: translateY(5px) rotate(45deg);
-    -ms-transform: translateY(5px) rotate(45deg);
-    -o-transform: translateY(5px) rotate(45deg);
-    transform: translateY(5px) rotate(45deg);
+.close svg {
+    width:17px;
+    height:17px;
+    padding:5px;
+    color:{color:text};
 }
-
-.burger.clicked span::after {
-    -webkit-transform: translateY(-5px) rotate(-45deg);
-    -moz-transform: translateY(-5px) rotate(-45deg);
-    -ms-transform: translateY(-5px) rotate(-45deg);
-    -o-transform: translateY(-5px) rotate(-45deg);
-    transform: translateY(-5px) rotate(-45deg);
-}
-
-.burger.clicked span:before, .burger.clicked span:after {
-    background-color:{color:menu button};}
 
 /* nav */
 
@@ -511,7 +505,7 @@ nav.show ul.main li:nth-child(8) {transition-delay:2.05s;}
 nav.show ul.main li:nth-child(9) {transition-delay:2.2s;}
 nav.show ul.main li:nth-child(10) {transition-delay:2.35s;}
 
-nav.show .social {
+nav.show .social, nav.show .close {
     -webkit-transform: translateY(0px);
     -moz-transform: translateY(0px);
     -ms-transform: translateY(0px);
@@ -520,7 +514,7 @@ nav.show .social {
     opacity: 1;
 }
 
-nav.show .social {transition-delay:1s;}
+nav.show .social, nav.show .close {transition-delay:1s;}
 
 nav .main {
     position:absolute;
@@ -1360,6 +1354,11 @@ footer {display:none!important;}
 .top, .burger, .hcontrols, iframe.tmblr-iframe {
     position:absolute;
 }
+
+.burger.clicked span:before, .burger.clicked span:after {
+    position:fixed;
+    top:20px;
+}
 {/block:IfNotStickyTop}
 
 /* dark version */
@@ -1518,6 +1517,8 @@ nav, nav ul.main li a {
 <div class="burger"> <span></span> </div>
 
 <nav>
+
+<div class="close"><i data-feather="x"></i></div>
 
     <!-- if you decide to add more links i recommend up to 3 more only -->
     <ul class="main">
@@ -1847,8 +1848,7 @@ $(document).ready(function(){
     });
     {block:IfNotTimeAgo}
     // menu
-    $('.burger, .more').click(function(){
-        $('.burger').toggleClass('clicked');
+    $('.burger, .close, .more').click(function(){
         $('.overlay').toggleClass('show');
         $('nav').toggleClass('show');
         $('body').toggleClass('overflow');
